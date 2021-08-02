@@ -1,6 +1,38 @@
 spring:
+  profiles:
+    active: local # 기본 환경
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
+  sql:
+    init:
+      data-locations: classpath:data-h2.sql
   h2:
     console:
       enabled: true
+
+#  profiles:
+#    active: local # 기본 환경
+
+# local environment
+#---
+#spring:
+#  profiles: local
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: create-drop
+#  h2:
+#    console:
+#      enabled: true
+
+
 
 
