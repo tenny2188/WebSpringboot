@@ -9,4 +9,3 @@ spring:
       on-profile: local
   jpa:
     show-sql: true
-    defer-datasource-initialization: true
