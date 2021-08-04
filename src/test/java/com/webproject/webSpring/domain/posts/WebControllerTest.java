@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = RANDOM_PORT, properties = "classpath:application.yml")
-//@ContextConfiguration(classes = WebSpringApplication.class)
+@ContextConfiguration(classes = WebSpringApplication.class)
 public class WebControllerTest {
 
     @Autowired

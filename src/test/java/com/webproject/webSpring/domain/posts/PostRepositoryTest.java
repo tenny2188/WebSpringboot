@@ -20,7 +20,7 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(properties = "classpath:application.yml")
-//@ContextConfiguration(classes = WebSpringApplication.class)
+@ContextConfiguration(classes = WebSpringApplication.class)
 public class PostRepositoryTest {
 
     @Autowired
