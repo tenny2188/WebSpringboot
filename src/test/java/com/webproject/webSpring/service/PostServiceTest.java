@@ -15,8 +15,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
-@ContextConfiguration(classes = WebSpringApplication.class)
+@SpringBootTest(properties = "classpath:application.yml")
+//@ContextConfiguration(classes = WebSpringApplication.class)
 public class PostServiceTest {
 
     @Autowired

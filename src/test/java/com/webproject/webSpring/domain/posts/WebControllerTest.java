@@ -13,8 +13,8 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = RANDOM_PORT)
-@ContextConfiguration(classes = WebSpringApplication.class)
+@SpringBootTest(webEnvironment = RANDOM_PORT, properties = "classpath:application.yml")
+//@ContextConfiguration(classes = WebSpringApplication.class)
 public class WebControllerTest {
 
     @Autowired

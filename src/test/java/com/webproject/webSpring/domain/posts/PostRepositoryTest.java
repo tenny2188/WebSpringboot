@@ -19,8 +19,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
-@ContextConfiguration(classes = WebSpringApplication.class)
+@SpringBootTest(properties = "classpath:application.yml")
+//@ContextConfiguration(classes = WebSpringApplication.class)
 public class PostRepositoryTest {
 
     @Autowired
