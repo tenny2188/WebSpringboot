@@ -1,0 +1,11 @@
+#TEST
+spring:
+  profiles:
+    active: local # 기본 환경
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  jpa:
+    show-sql: true
