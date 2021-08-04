@@ -6,6 +6,7 @@ import com.webproject.webSpring.domain.posts.Posts;
 import com.webproject.webSpring.web.PostsSaveRequestDto;
 import org.junit.After;
 import org.junit.Assert;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class PostServiceTest {
 
     @Autowired
     private PostRepository postRepository;
+
+    @BeforeEach
+    public void cleanupfirst() {postRepository.deleteAll();}
 
     @After
     public void cleanup () {
