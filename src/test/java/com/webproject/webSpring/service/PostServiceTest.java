@@ -5,6 +5,7 @@ import com.webproject.webSpring.domain.posts.PostRepository;
 import com.webproject.webSpring.domain.posts.Posts;
 import com.webproject.webSpring.web.PostsSaveRequestDto;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Assertions;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(properties = "classpath:application.yml")
@@ -44,8 +46,11 @@ public class PostServiceTest {
 
         //then
         Posts posts = postRepository.findAll().get(0);
-        assertThat(posts.getAuthor()).isEqualTo(dto.getAuthor());
-        assertThat(posts.getContent()).isEqualTo(dto.getContent());
-        assertThat(posts.getTitle()).isEqualTo(dto.getTitle());
+        Assertions.assertEquals(posts.getAuthor(), dto.getAuthor());
+        Assertions.assertEquals(posts.getContent(),dto.getContent());
+        Assertions.assertEquals(posts.getTitle(),dto.getTitle());
+        //assertThat(posts.getAuthor()).isEqualTo(dto.getAuthor());
+        //assertThat(posts.getContent()).isEqualTo(dto.getContent());
+        //assertThat(posts.getTitle()).isEqualTo(dto.getTitle());
     }
 }
