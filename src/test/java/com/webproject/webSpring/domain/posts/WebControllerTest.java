@@ -9,15 +9,19 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.persistence.Transient;
+
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = RANDOM_PORT, properties = "classpath:application.yml")
 @ContextConfiguration(classes = WebSpringApplication.class)
+
 public class WebControllerTest {
 
     @Autowired
+    @Transient
     private TestRestTemplate restTemplate;
 
     @Test

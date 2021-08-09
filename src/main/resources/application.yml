@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: local # 기본 환경
+    active: real-db # 기본 환경
 ---
 spring:
   config:
@@ -17,6 +17,18 @@ spring:
   h2:
     console:
       enabled: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: real-db
+  datasource:
+    hikari:
+      driver-class-name: org.mariadb.jdbc.Driver
+      jdbc-url: jdbc:mariadb://database-1.caguqc2hycdu.ap-northeast-2.rds.amazonaws.com:3306/webservice
+      username: admin
+      password: badasaga96
 
 #  profiles:
 #    active: local # 기본 환경
